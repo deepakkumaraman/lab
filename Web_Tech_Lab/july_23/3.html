@@ -1,0 +1,56 @@
+<!--Write code to draw 6 circle pattern-->
+
+<!DOCTYPE>
+<html>
+<title>
+	six circle pattern
+</title>
+<body>
+	<h1><u>six circle pattern:</u></h1>
+	<canvas id="myCanvas" width="500" height="500">
+		your browser does not support canvas
+	</canvas>
+	<script>
+		var canvas = document.getElementById("myCanvas");
+		var ctx=canvas.getContext("2d");
+		ctx.beginPath();
+		ctx.arc(250,110,40,0,2*Math.PI,false);
+		ctx.closePath();
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.transform(1,0,0,1,50,30);
+		ctx.arc(250,110,40,2*Math.PI,false);
+		ctx.closePath();
+		ctx.stroke();
+
+
+		ctx.beginPath();
+		ctx.transform(1,0,0,1,0,60);
+		ctx.arc(250,110,40,2*Math.PI,false);
+		ctx.closePath();
+		ctx.stroke();
+
+
+		ctx.beginPath();
+		ctx.transform(1,0,0,1,-50,30);
+		ctx.arc(250,110,40,2*Math.PI,false);
+		ctx.closePath();
+		ctx.stroke();
+
+    
+		ctx.beginPath();
+		ctx.transform(1,0,0,1,-50,-30);
+    ctx.arc(250,110,40,2*Math.PI,false);
+		ctx.closePath();
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.transform(1,0,0,1,0,-60);
+		ctx.arc(250,110,40,2*Math.PI,false);
+		ctx.closePath();
+		ctx.stroke();
+    
+	</script>
+</body>
+</html>
