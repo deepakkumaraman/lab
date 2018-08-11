@@ -1,0 +1,65 @@
+<!--Validate Login form-->
+<!--Password must contain-->
+<!--one uppercase, 1 lower case, 1 numeric value and 1 special symbol-->
+<!--and length should be 6-10-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+    <style>
+      *{
+        margin: 10px;
+        padding: 5px;
+        font-family: sans-serif;
+      }
+      .button{
+        background-color: chocolate;
+        width: 70px;
+        height: 20px;
+        display: inline;
+        float: right;
+      }
+      .wrapper{
+        margin: auto; 
+        width: 400px; 
+        border: 2px solid black;
+      }
+      h1{
+        text-align: center;
+      }
+    </style>
+	</head>
+	
+	<body>
+    <h1>Institute of ASur</h1>
+			<div class="wrapper">
+        <form name="form1" onsubmit="validateForm()">
+          <h1>Welcome!</h1>
+          <fieldset style="width: 300px">
+              <legend>login</legend>
+
+            username: <input type="text" name="username">
+            <br>
+            password: <input type="password" name="passwd">
+            <br>
+
+            <input type="submit" name="submit">
+          </fieldset>
+        </form>
+      </div>
+	</body>
+  <script>
+    function validateForm(){
+      var passReg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{6,10}";
+      if(document.forms["form1"]["passwd"].value.match(passReg)){
+        alert("password is valid");
+        return true;
+      } else{
+        alert('password is not valid');
+        return false;
+      }
+    }
+  </script>
+</html>
+
