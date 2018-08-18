@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello</title>
+  <style>
+    *{
+      font-family: sans-serif;
+    }
+    .wrapper{
+      width: 300px;
+      margin: auto;
+      border: 2px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">Menu Driven Program</h1>
+  <div class="wrapper">
+    <ol style="text-align: left;">
+      <li>To check whether the is Prime or not.</li>
+      <li>To check whether the is Odd or Even</li>
+      <li>To find factorial of a number.</li>
+      <li>To EXIT</li>
+    </ol>
+    <div id="div1">
+        <input id="input1" type="text">
+        <button onclick="show()">click me</button>
+    </div>
+
+    <div id="div2" style="display: none;">
+      <input id="input2" type="number">
+      <button onclick="getResult()">Get Result</button>
+    </div>
+
+    <div>
+      <h3 id="output1"></h3>
+    </div>
+    <div>
+      <h3 id="output2"></h3>
+  </div>
+  </div>
+</body>
+  <script>
+    function show(){
+      //on clicking show the options
+      var div2 = document.getElementById("div2");
+      div2.style.display = "block";
+    }
+    
+    
+    function getResult(){
+      var div2 = document.getElementById("div2");
+      var input1 = document.getElementById("input1").value;
+      var input2 = document.getElementById("input2").value;
+      var output1 = document.getElementById("output1");
+      var output2 = document.getElementById("output2");
+      var que = "store the option";
+      var result = "store the result in this vaiable";
+      
+      div2.style.display = "none";
+      
+      if(input2 == "1"){
+        que = "Check prime or not:";
+        result = prime(input1);
+      } else if(input2 == "2"){
+        que = "Check even or odd: ";
+        result = odd_even(input1);
+      } else if(input2 == "3"){
+        que = "Factorial of " + input1
+        result = factorial(input1);
+      } else if(input2 == "4"){
+        que = ""
+        result = 'exit';
+      } else{
+        que = "";
+        result = 'invalid option';
+      }
+      
+      output1.innerHTML = que;
+      output2.innerHTML = result;
+      
+      //clear the input field
+      document.getElementById("input1").value="";
+      document.getElementById("input2").value="";
+    }
+    
+    function factorial(num){
+      var fact = 1;
+      for(i = 0; i < num; i++){
+        fact = fact * (i+1);
+      }
+      
+      result = fact;
+      return result;
+    }
+    
+    function prime(num){
+      var divisible = false;
+      for(var i = 2; i <= num/2; i++){
+        if(num % i === 0){
+          divisible = true;
+          break;
+        }
+      }
+      if(divisible)
+        result = num + " is not a prime number.";
+      else
+        result = num + " is a prime number.";
+      
+      return result;
+    }
+    
+    function odd_even(num){
+      if(num % 2 === 0)
+        result = num + " is an even number.";
+      else
+        result = num + " is an odd number.";
+      return result;
+    }
+  </script>
+</html>

@@ -1,0 +1,60 @@
+<!--print fibonacci series-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fibonacci</title>
+  <style>
+    *{
+      font-family: sans-serif;
+      text-align: center;
+    }
+    div{
+      width: 300px;
+      margin: auto;
+      border: 2px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fibonacci</h1>
+  <div>
+    <input id="input1" placeholder="No. of terms">
+    <button onclick="fibo()">Reverse</button>
+    <h3 id="output1"></h3>
+    <h3 id="output2"></h3>
+  </div>
+</body>
+  <script>
+    function fibo(){
+      var term = document.getElementById("input1").value;
+      var output1 = document.getElementById("output1");
+      var output2 = document.getElementById("output2");
+
+      var  a = 0, b = 1, n = 0;
+      var result = "";
+      while(true){
+        if(n < term){
+          result += a+", ";
+          n++;
+        } else{
+          break;
+        }
+        if(n < term){
+          result += b+", ";
+          a = a+b;
+          b = a+b;
+          n++;
+        } else{
+          break;
+        }
+      }
+      
+      output1.innerHTML = "Fibonacci series upto " + term + " terms:";
+      output2.innerHTML = result;
+    }
+  
+  </script>
+</html>

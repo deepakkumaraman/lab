@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Print</title>
+</head>
+<body>
+  <h3 id="1"></h3>
+  <h3 id="2"></h3>
+  <h3 id="3"></h3>
+  <h3 id="4"></h3>
+</body>
+<script>
+  var elem = 1, no_of_lines = 4;
+  for(i = 1; i <= no_of_lines; i++){
+    var line_str = "";
+    var plc = document.getElementById(i);
+    
+    for(j = 1; j <= no_of_lines-i; j++){
+      line_str += "\xa0\xa0\xa0";
+    }
+    for(j = 0; j < i; j++){
+      line_str += elem + "\xa0\xa0\xa0\xa0";
+      elem++;
+    }
+    plc.innerHTML = line_str;
+  }
+</script>
+</html>

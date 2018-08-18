@@ -1,0 +1,56 @@
+<!--Reverse number and check if both the numbers are same-->
+
+<!DOCYTPE html>
+<html>
+<head>
+  <title>Reverse</title>
+  <style>
+    *{
+      font-family: sans-serif;
+      text-align: center;
+    }
+    div{
+      width: 300px;
+      margin: auto;
+      border: 2px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Reverse Number</h1>
+  <div>
+    <input id="input1">
+    <button onclick="reverse()">Reverse</button>
+    <h3 id="output1"></h3>
+    <h3 id="output2"></h3>
+    <h3 id="output3"></h3>
+  </div>
+</body>
+  <script>
+    function reverse(){
+      var input1 = document.getElementById("input1").value;
+      var output1 = document.getElementById("output1");
+      var output2 = document.getElementById("output2");
+      var output3 = document.getElementById("output3");
+      
+      var no = Number(input1);
+      var r_no = 0;
+      while(no != 0){
+        var temp = no % 10;
+        var no = Math.floor(no / 10);
+        var r_no = r_no * 10 + temp;
+      }
+      
+      output1.innerHTML = 'Before Reversing: '+input1;
+      output2.innerHTML = 'After Reversing: '+r_no;
+      
+      if(input1 == r_no)
+        output3.innerHTML = 'Both the numbers are equal';
+      else
+        output3.innerHTML = 'Both the numbers are not equal';
+      
+    }
+  </script>
+</html>
