@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page 5</title>
+
+<script src="jquery.js"></script>
+<script> 
+$(document).ready(function(){
+    $("button").click(function(){
+        $("div").animate({left: '500px'},"slow");
+        $("div").animate({marginTop: '200px'}, "slow")
+        $("div").animate({left: '-=490px'}, "slow")
+        $("div").animate({marginTop: '-=200px'}, "slow")
+    });
+});
+</script> 
+</head>
+<body>
+
+<button>Start Animation</button>
+<br> <br>
+<div style="background-image:url('image/dir.jpg');height:200px;width:200px;position:absolute;background-size: cover;"></div>
+
+</body>
+</html>
